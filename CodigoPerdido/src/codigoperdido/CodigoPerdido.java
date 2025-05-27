@@ -81,7 +81,7 @@ public class CodigoPerdido {
         // Verifica se o número é uma potência de 2
         // Uma potência de 2 (maior que zero) tem apenas um '1' em sua representação binária.
         // Por exemplo: 4 (100), 8 (1000). (numero & (numero - 1)) == 0 é um truque para verificar isso.
-        boolean isPowerOfTwo = (numeroDesafio > 0) && ((numeroDesafio & (numeroDesafio - 1)) == 0);
+        boolean poderDois = (numeroDesafio > 0) && ((numeroDesafio & (numeroDesafio - 1)) == 0);
 
         System.out.println("\nProfessor Enigma: Este número é uma potência de 2? (S/N)");
         System.out.println("Número: " + numeroDesafio);
@@ -89,10 +89,10 @@ public class CodigoPerdido {
 
         String respostaJogador = input.nextLine().toUpperCase().trim(); // Lê a resposta e converte para maiúscula
 
-        if ((respostaJogador.equals("S") && isPowerOfTwo) || (respostaJogador.equals("N") && !isPowerOfTwo)) {
-            System.out.println("Professor Enigma: EXCELENTE! Você acertou! " + numeroDesafio + (isPowerOfTwo ? " é" : " não é") + " uma potência de 2.");
+        if ((respostaJogador.equals("S") && poderDois) || (respostaJogador.equals("N") && !poderDois)) {
+            System.out.println("Professor Enigma: EXCELENTE! Você acertou! " + numeroDesafio + (poderDois ? " é" : " não é") + " uma potência de 2.");
         } else {
-            System.out.println("Professor Enigma: Quase lá! " + numeroDesafio + (isPowerOfTwo ? " é" : " não é") + " uma potência de 2.");
+            System.out.println("Professor Enigma: Quase lá! " + numeroDesafio + (poderDois ? " é" : " não é") + " uma potência de 2.");
             System.out.println("Professor Enigma: Lembre-se das potências de 2: 1, 2, 4, 8, 16, 32, 64...");
         }
     }
@@ -101,7 +101,6 @@ public class CodigoPerdido {
     public static String inicio(){
         Scanner input = new Scanner(System.in);
         Random rand = new Random();
-        String resposta;//Primeira pergunta
         int numero;//Receber números da tabela
         String nome;//Receber o nome do jogador
        
@@ -130,8 +129,8 @@ public class CodigoPerdido {
 
         System.out.println("Professor Enigma: Vamos começar com a primeira pergunta: O que é o sistema binário?\n\n");
         System.out.println("Escolha do jogador: \nA. São gêneros!\nB. São sistemas que usam apenas dois dígitos: 1 e 1,0.\nC. São sistemas que usam apenas dois dígitos: 0 e 1.");
-        System.out.print("Digite sua resposta (A/B/C): ");
-        resposta = input.nextLine().toUpperCase();
+        System.out.println("Digite sua resposta (A/B/C): ");
+        String resposta = input.next().toUpperCase();
 
         if (resposta.equals("C")) {
             System.out.println("Professor Enigma: Inacreditável, você sabe disso! Meus parabéns, você sobreviveria aqui!");
