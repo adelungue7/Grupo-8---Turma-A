@@ -1,5 +1,6 @@
 package codigoperdido;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class CodigoPerdido {
@@ -28,7 +29,8 @@ public class CodigoPerdido {
         retorno();
     }
     
-    public static void creditos(){
+    public static void creditos()//função que mostra os créditos
+    { 
         System.out.println("Jogo desenvolvido por:...");
         System.out.println("Pressione ENTER para voltar ao Menu!");
         retorno();
@@ -38,11 +40,70 @@ public class CodigoPerdido {
         input.nextLine();
     }
     
+    public static void desafioAdivinheOBinario() {
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
+        // Gera um número decimal entre 1 e 15 (para manter o binário curto)
+        int numeroDecimal = random.nextInt(15) + 1; 
+        // Converte para binário para saber a resposta correta (usado para validação)
+        String respostaBinariaCorreta = Integer.toBinaryString(numeroDecimal); 
+
+        System.out.println("\nProfessor Enigma: Prepare-se! Qual é o número " + numeroDecimal + " em binário?");
+        System.out.println("Dica: Use a tabela 8 4 2 1 para te ajudar!");
+        System.out.print("Sua resposta (apenas 0s e 1s, sem espaços): ");
+
+        String respostaJogador = input.nextLine().trim(); // Lê a resposta e remove espaços extras
+
+        // Simplifica a validação da resposta
+        // Adiciona zeros à esquerda se a resposta do jogador for menor que a correta, 
+        // por exemplo, se o número é 3 (binário 11) e o jogador digita "11"
+        // mas a resposta correta é "0011" ou "011" para padronizar
+        while (respostaJogador.length() < respostaBinariaCorreta.length()) {
+            respostaJogador = "0" + respostaJogador;
+        }
+
+        if (respostaJogador.equals(respostaBinariaCorreta)) {
+            System.out.println("Professor Enigma: MUITO BEM! " + numeroDecimal + " em binário é " + respostaBinariaCorreta + ". Você acertou!");
+        } else {
+            System.out.println("Professor Enigma: Ops, quase! A resposta correta para " + numeroDecimal + " em binário é " + respostaBinariaCorreta + ".");
+            System.out.println("Professor Enigma: Não desanime, a prática leva à perfeição!");
+        }
+    }
+    
+    public static void desafioOPoderDoDois() {
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
+        int numeroDesafio;
+        
+        // Gera um número entre 1 e 100 para o desafio
+        numeroDesafio = random.nextInt(100) + 1; 
+        
+        // Verifica se o número é uma potência de 2
+        // Uma potência de 2 (maior que zero) tem apenas um '1' em sua representação binária.
+        // Por exemplo: 4 (100), 8 (1000). (numero & (numero - 1)) == 0 é um truque para verificar isso.
+        boolean isPowerOfTwo = (numeroDesafio > 0) && ((numeroDesafio & (numeroDesafio - 1)) == 0);
+
+        System.out.println("\nProfessor Enigma: Este número é uma potência de 2? (S/N)");
+        System.out.println("Número: " + numeroDesafio);
+        System.out.print("Sua resposta: ");
+
+        String respostaJogador = input.nextLine().toUpperCase().trim(); // Lê a resposta e converte para maiúscula
+
+        if ((respostaJogador.equals("S") && isPowerOfTwo) || (respostaJogador.equals("N") && !isPowerOfTwo)) {
+            System.out.println("Professor Enigma: EXCELENTE! Você acertou! " + numeroDesafio + (isPowerOfTwo ? " é" : " não é") + " uma potência de 2.");
+        } else {
+            System.out.println("Professor Enigma: Quase lá! " + numeroDesafio + (isPowerOfTwo ? " é" : " não é") + " uma potência de 2.");
+            System.out.println("Professor Enigma: Lembre-se das potências de 2: 1, 2, 4, 8, 16, 32, 64...");
+        }
+    }
+
+    
     public static String inicio(){
         Scanner input = new Scanner(System.in);
-        String resposta;
-        int numero;
-        String nome;
+        Random rand = new Random();
+        String resposta;//Primeira pergunta
+        int numero;//Receber números da tabela
+        String nome;//Receber o nome do jogador
        
         
         System.out.println("Digite o nome que você deseja: ");
@@ -107,6 +168,37 @@ public class CodigoPerdido {
 
         System.out.println("Professor Enigma: Agora sim, estamos prontos para os verdadeiros desafios.");
         
+        desafioAdivinheOBinario();
+        desafioOPoderDoDois();
+        
+        // Assumindo que 'nomeJogador' foi definido e recebeu o nome do jogador em algum lugar anterior no seu código
+// Ex: String nomeJogador = input.nextLine();
+
+    System.out.println("\nProfessor Enigma: MAGNÍFICO, " + nome + "! Você realmente pegou o jeito do binário.");
+
+    System.out.println("Professor Enigma: Com esse conhecimento, você está pronto para o próximo passo.");
+
+    System.out.println("\n" + nome + ": Uau! Conseguimos! Achei que ia ficar preso no '0' e '1' para sempre.");
+
+    System.out.println(nome + ": Então, qual é a próxima falha na realidade que precisamos consertar?");
+
+    System.out.println("\nProfessor Enigma: O sistema binário é a chave para os computadores, mas há outros desafios à frente.");
+
+    System.out.println("Professor Enigma: Prepare-se! Nosso próximo destino é o **Cofre Octal**. Lá, novas falhas na realidade nos aguardam!");
+
+    System.out.println("Professor Enigma: Você está pronto para desvendar os segredos de base 8?");
+
+        System.out.println("\nJogador: ");
+        String resposta2 = input.next().toUpperCase();
+        if (resposta2.equals("SIM")) {
+            System.out.println("\nProfessor Enigma: Excelente! A aventura continua! Rumo ao Cofre Octal!");
+            // Chame aqui a função que inicia o desafio Octal
+            // Ex: iniciarDesafioOctal(input, nomeJogador);
+        } else {
+            System.out.println("\nProfessor Enigma: Entendo. Precisamos ter certeza de que você está preparado.");
+            System.out.println("Professor Enigma: Você pode retornar ao menu para rever seus conhecimentos ou descansar.");
+            menu(); // Chama a função que exibe o menu principal
+        }
         
         return nome;
     }
