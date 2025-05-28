@@ -110,22 +110,22 @@ public class CodigoPerdido {
 
         System.out.println("#--- Lore ---#\n");
         System.out.println("???: Você é mais uma pessoa comum nesse mundo que chamamos de lugar pra viver...\n\n" +
-                "???: Um dia você estava fazendo o que sempre fazia, quando nota um e-mail estranho...\n\n" +
-                nome + ": Esse arquivo tá em um tipo diferente, .@#0. Estranho, será que é algum jogo crackeado? Vou abrir.\n\n" +
-                "???: Você abre o arquivo e vê...\n\n" +
-                nome + ": Um monte de zeros e uns???? Que negócio nada a ver.\n\n" +
-                "???: Você decide digitar algo...\n\n" +
-                nome + ": E se eu digitar 0???\n\n" +
-                "???: Um caderno ao seu lado desaparece.\n\n" +
-                nome + ": Nem, NEM A PAU, EU SOU UM MANIPULADOR DE REALIDADE?\n\n" +
-                "???: Você brinca com a realidade até que...\n\n" +
-                nome + ": E se eu apertar o dois??\n\n" +
-                "???: Eu desisto... MAS VOCÊ QUEBROU A REALIDADE!\n\n" +
-                "Professor Enigma: Agora você está neste mundo para consertar o que fez.\n\n" +
-                nome + ": Que lugar é esse?\n\n" +
-                "Professor Enigma: Esse mundo mantém a realidade funcionando. Vamos consertar as falhas nas bases numéricas.\n\n" +
-                nome + ": Binário? Octal? Hexa-o-quê?\n\n" +
-                "Professor Enigma: Vou te ensinar tudo.\n\n");
+        "???: Um dia você estava fazendo o que sempre fazia, quando nota um e-mail estranho...\n\n" +
+        nome + ": Esse arquivo tá em um tipo diferente, .@#0. Estranho, será que é algum jogo crackeado? Vou abrir.\n\n" +
+        "???: Você abre o arquivo e vê...\n\n" +
+        nome + ": Um monte de zeros e uns???? Que negócio nada a ver.\n\n" +
+        "???: Você decide digitar algo...\n\n" +
+        nome + ": E se eu digitar 0???\n\n" +
+        "???: Um caderno ao seu lado desaparece.\n\n" +
+        nome + ": Nem, NEM A PAU, EU SOU UM MANIPULADOR DE REALIDADE?\n\n" +
+        "???: Você brinca com a realidade até que...\n\n" +
+        nome + ": E se eu apertar o dois??\n\n" +
+        "???: Eu desisto... MAS VOCÊ QUEBROU A REALIDADE!\n\n" +
+        "Professor Enigma: Agora você está neste mundo para consertar o que fez.\n\n" +
+        nome + ": Que lugar é esse?\n\n" +
+        "Professor Enigma: Esse mundo mantém a realidade funcionando. Vamos consertar as falhas nas bases numéricas.\n\n" +
+        nome + ": Binário? Octal? Hexa-o-quê?\n\n" +
+        "Professor Enigma: Vou te ensinar tudo.\n\n");
 
         System.out.println("Professor Enigma: Vamos começar com a primeira pergunta: O que é o sistema binário?\n\n");
         System.out.println("Escolha do jogador: \nA. São gêneros!\nB. São sistemas que usam apenas dois dígitos: 1 e 1,0.\nC. São sistemas que usam apenas dois dígitos: 0 e 1.");
@@ -133,72 +133,80 @@ public class CodigoPerdido {
         String resposta = input.next().toUpperCase();
 
         if (resposta.equals("C")) {
-            System.out.println("Professor Enigma: Inacreditável, você sabe disso! Meus parabéns, você sobreviveria aqui!");
-        } else if (resposta.equals("B")) {
-            System.out.println("Professor Enigma: QUASE! O sistema binário usa apenas 0 e 1, mas vejo que tem alguma noção.");
-        } else {
-            System.out.println("Professor Enigma: Deus tenha piedade de nós. A resposta correta é: 0 e 1.");
+        System.out.println("Professor Enigma: Inacreditável, você sabe disso! Meus parabéns, você sobreviveria aqui!");
+        }   
+        else if (resposta.equals("B")) {
+        System.out.println("Professor Enigma: QUASE! O sistema binário usa apenas 0 e 1, mas vejo que tem alguma noção.");
+        }   
+        else {
+        System.out.println("Professor Enigma: Deus tenha piedade de nós. A resposta correta é: 0 e 1.");
         }
 
-        System.out.println("\nProfessor Enigma: Esses dígitos são chamados de bits. Cada posição representa uma potência de 2.\n");
-        System.out.println("Crie uma tabela dos números em base 2 (de 1 até 1024). Vamos testar!\n\n");
+        System.out.println("\nProfessor Enigma: Muito bem, agora preste atenção!");
+        System.out.println("Professor Enigma: O sistema binário é composto por dígitos chamados bits. Cada bit pode ser 0 ou 1.");
+        System.out.println("Professor Enigma: Mas o segredo está nas posições! Cada posição vale o dobro da anterior: 1, 2, 4, 8, 16, 32...");
+        System.out.println("Professor Enigma: Isso porque cada posição representa uma **potência de 2**.");
+        System.out.println("\nProfessor Enigma: Veja este exemplo com o número 5:");
+
+        System.out.println("Decimal: 5 --> Como chegamos a isso?");
+        System.out.println("Resposta: 5 = 4 + 1 --> Ou seja: 2² + 2⁰");
+        System.out.println("Tabela:    8  4  2  1");
+        System.out.println("Binário:   0  1  0  1 --> Resultado final: 0101\n");
+
+        System.out.println("Professor Enigma: Viu como é simples? O bit vale 1 quando usamos a potência de 2, e 0 quando não usamos.");
+
+        System.out.println("\nProfessor Enigma: Crie uma tabela dos números em base 2 (de 1 até 1024). Vamos testar!\n\n");
 
         for (int i = 0; i < 11; i++) {
-            System.out.print(nome + ", digite um número da tabela binária: ");
-            numero = input.nextInt();
+        System.out.print(nome + ", digite um número da tabela binária: ");
+        numero = input.nextInt();
 
-            if (numero == 1 || numero == 2 || numero == 4 || numero == 8 ||
-                numero == 16 || numero == 32 || numero == 64 ||
-                numero == 128 || numero == 256 || numero == 512 || numero == 1024) {
-                System.out.println("Número válido! Boa!");
-            } else {
-                System.out.println("Número inválido! Tente novamente.");
-                i--; // Repete a tentativa
+        if (numero == 1 || numero == 2 || numero == 4 || numero == 8 ||
+        numero == 16 || numero == 32 || numero == 64 ||
+        numero == 128 || numero == 256 || numero == 512 || numero == 1024) {
+        System.out.println("Número válido! Boa!");
+            } 
+        else {
+        System.out.println("Número inválido! Tente novamente.");
+        i--; // Repete a tentativa
             }
         }
 
-        System.out.println("\nProfessor Enigma: Muito bem. Esses números serão a chave para sobreviver.\n\n" +
-                "Quando lhe for dado um número decimal, você deve convertê-lo para binário somando os valores da tabela.\n\n");
+        System.out.println("\nProfessor Enigma: Excelente. Esses são os **poderes do 2** — com eles, você pode representar qualquer número!");
+        System.out.println("Professor Enigma: Veja, quanto é 13 em binário?\n");
 
-        System.out.println("Professor Enigma: Veja, quanto é 13 em binário?\n\n");
         System.out.println("Tabela: 1024 512 256 128 64 32 16 8 4 2 1");
         System.out.println("Binário:  0     0   0   0   0  0   0  1 1 0 1");
         System.out.println("Soma: 8 + 4 + 1 = 13 --> Resultado: 00000001101\n\n");
 
         System.out.println("Professor Enigma: Agora sim, estamos prontos para os verdadeiros desafios.");
-        
+
         desafioAdivinheOBinario();
         desafioOPoderDoDois();
-        
-        // Assumindo que 'nomeJogador' foi definido e recebeu o nome do jogador em algum lugar anterior no seu código
-// Ex: String nomeJogador = input.nextLine();
 
-    System.out.println("\nProfessor Enigma: MAGNÍFICO, " + nome + "! Você realmente pegou o jeito do binário.");
+        System.out.println("\nProfessor Enigma: MAGNÍFICO, " + nome + "! Você realmente pegou o jeito do binário.");
+        System.out.println("Professor Enigma: Com esse conhecimento, você está pronto para o próximo passo.");
 
-    System.out.println("Professor Enigma: Com esse conhecimento, você está pronto para o próximo passo.");
+        System.out.println("\n" + nome + ": Uau! Conseguimos! Achei que ia ficar preso no '0' e '1' para sempre.");
+        System.out.println(nome + ": Então, qual é a próxima falha na realidade que precisamos consertar?");
 
-    System.out.println("\n" + nome + ": Uau! Conseguimos! Achei que ia ficar preso no '0' e '1' para sempre.");
-
-    System.out.println(nome + ": Então, qual é a próxima falha na realidade que precisamos consertar?");
-
-    System.out.println("\nProfessor Enigma: O sistema binário é a chave para os computadores, mas há outros desafios à frente.");
-
-    System.out.println("Professor Enigma: Prepare-se! Nosso próximo destino é o **Cofre Octal**. Lá, novas falhas na realidade nos aguardam!");
-
-    System.out.println("Professor Enigma: Você está pronto para desvendar os segredos de base 8?");
+        System.out.println("\nProfessor Enigma: O sistema binário é a chave para os computadores, mas há outros desafios à frente.");
+        System.out.println("Professor Enigma: Prepare-se! Nosso próximo destino é o **Cofre Octal**. Lá, novas falhas na realidade nos aguardam!");
+        System.out.println("Professor Enigma: Você está pronto para desvendar os segredos de base 8?");
 
         System.out.println("\nJogador: ");
         String resposta2 = input.next().toUpperCase();
         if (resposta2.equals("SIM")) {
-            System.out.println("\nProfessor Enigma: Excelente! A aventura continua! Rumo ao Cofre Octal!");
-            // Chame aqui a função que inicia o desafio Octal
-            // Ex: iniciarDesafioOctal(input, nomeJogador);
-        } else {
-            System.out.println("\nProfessor Enigma: Entendo. Precisamos ter certeza de que você está preparado.");
-            System.out.println("Professor Enigma: Você pode retornar ao menu para rever seus conhecimentos ou descansar.");
-            menu(); // Chama a função que exibe o menu principal
-        }
-        
+        System.out.println("\nProfessor Enigma: Excelente! A aventura continua! Rumo ao Cofre Octal!");
+        // Chame aqui a função que inicia o desafio Octal
+        // Ex: iniciarDesafioOctal(input, nome);
+            } 
+        else {
+        System.out.println("\nProfessor Enigma: Entendo. Precisamos ter certeza de que você está preparado.");
+        System.out.println("Professor Enigma: Você pode retornar ao menu para rever seus conhecimentos ou descansar.");
+        menu(); // Chama a função que exibe o menu principal
+            }
+
         return nome;
     }
     
