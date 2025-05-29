@@ -97,6 +97,25 @@ public class CodigoPerdido {
         }
     }
 
+    public static void bossFinalModoFacil() {
+        // Implementação do modo fácil do Boss Final
+    }
+
+    public static void bossFinalModoDificil() {
+        // Implementação do modo difícil do Boss Final
+    }
+
+    public static void mostrarFim() {
+        System.out.println(" ______ _____ __  __ ");
+        System.out.println("|  ____|_   _|  \\/  |");
+        System.out.println("| |__    | | | \\  / |");
+        System.out.println("|  __|   | | | |\\/| |");
+        System.out.println("| |     _| |_| |  | |");
+        System.out.println("|_|    |_____|_|  |_|");
+        System.out.println();
+        System.out.println();
+    }
+
     
     public static String inicio(){
         Scanner input = new Scanner(System.in);
@@ -193,8 +212,8 @@ public class CodigoPerdido {
         System.out.println("\nProfessor Enigma: O sistema binário é a chave para os computadores, mas há outros desafios à frente.");
         System.out.println("Professor Enigma: Prepare-se! Nosso próximo destino é o **Cofre Octal**. Lá, novas falhas na realidade nos aguardam!");
         System.out.println("Professor Enigma: Você está pronto para desvendar os segredos de base 8?");
-
-        System.out.println("\nJogador: ");
+        System.out.println("Digite 'SIM' para continuar ou 'NÃO' para esperar:");
+        // Lê a resposta do jogador
         String resposta2 = input.next().toUpperCase();
         if (resposta2.equals("SIM")) {
         System.out.println("\nProfessor Enigma: Excelente! A aventura continua! Rumo ao Cofre Octal!");
@@ -203,8 +222,10 @@ public class CodigoPerdido {
             } 
         else {
         System.out.println("\nProfessor Enigma: Entendo. Precisamos ter certeza de que você está preparado.");
-        System.out.println("Professor Enigma: Você pode retornar ao menu para rever seus conhecimentos ou descansar.");
-        menu(); // Chama a função que exibe o menu principal
+        System.out.println("Professor Enigma: Volte quando estiver pronto para enfrentar o Cofre Octal.");
+        // espera o jogador pressionar ENTER para continuar o jogo
+        System.out.println("Pressione ENTER para continuar!");
+        input.nextLine(); // Aguarda o jogador pressionar ENTER
             }
 
         return nome;
@@ -219,7 +240,48 @@ public class CodigoPerdido {
     }
     
     public static void bossfinal(String nome){
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("\nProfessor Enigma: Parabéns, " + nome + "! Você chegou ao final da jornada!\n\n"
+        + "Professor Enigma: Mas cuidado, o Boss Final está à sua espera!\n\nEle é o mestre das bases numéricas e não vai facilitar!\n\n"
+        + "Prepare-se para o desafio final, onde suas habilidades em binário, octal e hexadecimal serão testadas ao máximo!\n\nBoa sorte, \" + nome + \"! Você vai precisar!\n");
         
+        System.out.println("Pressione ENTER para enfrentar o Boss Final!");
+        input.nextLine(); // Aguarda o jogador pressionar ENTER
+        
+        System.out.println("Você se aproxima do Boss Final, que está cercado por números e símbolos de todas as bases numéricas.\n\n"
+        + "Boss Final: Bem-vindo, " + nome + "! Você chegou longe, mas agora terá que provar seu valor!\n\n"
+        + "Boss Final: Responda corretamente às minhas perguntas e você poderá salvar a realidade!\n\n"
+        + "Boss Final: Mas cuidado, uma resposta errada e você será derrotado!\n\n"
+        + "Boss Final: Vamos começar!\n\n");
+        
+        System.out.println("Você quer enfrentar o boss no modo fácil ou difícil? (Digite '0' para fácil ou '1' para difícil)");
+        int dificuldade = input.nextInt();
+        while (dificuldade < 0 || dificuldade > 1) {
+            System.out.println("Opção inválida! Digite '0' para fácil ou '1' para difícil.");
+            dificuldade = input.nextInt();
+        }
+        if (dificuldade == 0) {
+            System.out.println("Você escolheu o modo fácil! Boa sorte!");
+            bossFinalModoFacil();
+            
+        } else if (dificuldade == 1) {
+            System.out.println("Você escolheu o modo difícil! Prepare-se para um verdadeiro desafio!");
+            bossFinalModoDificil();
+        }
+
+        System.out.println("Parabéns, " + nome + "! Você derrotou o Boss Final e salvou a realidade!\n\n"
+        + "Professor Enigma: Você provou ser um verdadeiro mestre das bases numéricas!\n\n"
+        + "Professor Enigma: Com seu conhecimento, você restaurou a ordem no mundo e consertou o que estava quebrado!\n\n"
+        + "Professor Enigma: Agora você pode voltar para casa, mas lembre-se, o conhecimento é a chave para tudo!\n\n"
+        + "Professor Enigma: Obrigado por jogar, " + nome + "! Até a próxima aventura!\n\n");
+        
+        mostrarFim(); // Chama a função que exibe a mensagem de parabéns
+        
+        System.out.println("Pressione ENTER para voltar ao Menu!");
+        input.nextLine(); // Aguarda o jogador pressionar ENTER
+        System.out.println("Voltando ao Menu...");
+        menu(); // Chama a função que exibe o menu principal
     }
     
     public static void main(String[] args) {
