@@ -31,7 +31,7 @@ public class CodigoPerdido {
     
     public static void creditos()//função que mostra os créditos
     { 
-        System.out.println("Jogo desenvolvido por:...");
+        System.out.println("Jogo desenvolvido por:\nErick Yuji Conceição\nGustavo Golçalves Viana\nJoão Victor Reis Alves\nNathan Ferraz Liberatti\nRafael Adelungue Da Silva");
         System.out.println("Pressione ENTER para voltar ao Menu!");
         retorno();
     }
