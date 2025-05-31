@@ -279,7 +279,6 @@ public class CodigoPerdido {
         System.out.println("Pressione ENTER para voltar ao Menu!");
         input.nextLine(); // Aguarda o jogador pressionar ENTER
         System.out.println("Voltando ao Menu...");
-        menu(); // Chama a função que exibe o menu principal
     }
     
     public static void main(String[] args) {
