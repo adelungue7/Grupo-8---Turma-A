@@ -40,15 +40,28 @@ public class CodigoPerdido {
     }
     
     
-    public static void desafioAdivinheOBinario() {
-        Scanner input = new Scanner(System.in);
+    public static int nDecimal() {
         Random random = new Random();
         
         // Gera um número decimal entre 1 e 15 (para manter o binário curto)
-        int numeroDecimal = random.nextInt(15) + 1; 
+        int n = random.nextInt(15) + 1;
+        
+        return n;
+    }
+    
+    public static String conversaoParaBinario(int numeroDecimal) {
+        
+        String binario = Integer.toBinaryString(numeroDecimal);
+        
+        return binario;
+    }
+    
+       
+    public static void desafioAdivinheOBinario(int numeroDecimal, String respostaBinariaCorreta) {
+        Scanner input = new Scanner(System.in);
         
         // Converte para binário para saber a resposta correta (usado para validação)
-        String respostaBinariaCorreta = Integer.toBinaryString(numeroDecimal);
+        //respostaBinariaCorreta = Integer.toBinaryString(numeroDecimal);
 
         System.out.println("\nProfessor Enigma: Prepare-se! Qual é o número " + numeroDecimal + " em binário?");
         System.out.println("Dica: Use a tabela 8 4 2 1 para te ajudar!");
@@ -67,8 +80,6 @@ public class CodigoPerdido {
         if (respostaJogador.equals(respostaBinariaCorreta)) {
             System.out.println("Professor Enigma: MUITO BEM! " + numeroDecimal + " em binário é " + respostaBinariaCorreta + ". Você acertou!");
         } else {
-            //System.out.println("Professor Enigma: A resposta correta para " + numeroDecimal + " em binário é " + respostaBinariaCorreta + ".");
-            //A explicação será implementada no modo estudo
             System.out.println("Professor Enigma: Ops, quase! Não desanime, a prática leva à perfeição!");
         }
     }
@@ -136,13 +147,13 @@ public class CodigoPerdido {
         System.out.println("");
                                                                            
         
-        System.out.println("Aqui o professor Enigma vai te mostrar as explicações de todas as questões que você respondeu");
+        //System.out.println("Aqui o professor Enigma vai te mostrar as explicações de todas as questões que você respondeu");
+        System.out.println("AQUI O PROFESSOR ENIGMA VAI TE MOSTRAR AS EXPLICAÇÕES DE TODAS AS QUESTOÕES QUE VOCÊ RESPONDEU");
         System.out.println();
         
+        System.out.println("---------------------------------PRIMEIRO EXERCÍCIO---------------------------------");
+        
         System.out.println("O que é o sistema binário?");
-        
-        System.out.println("-----EXPLICAÇÃO:-----");
-        
         System.out.println("Professor Enigma: Vamos revisar juntos!");
         System.out.println("O sistema binário é a linguagem dos computadores. Ele usa apenas dois símbolos: 0 e 1.");
         System.out.println("Por que isso? Porque máquinas funcionam com dois estados simples: ligado (1) e desligado (0).");
@@ -153,7 +164,29 @@ public class CodigoPerdido {
         System.out.println("O número 3, é 11.");
         System.out.println();
         System.out.println("Professor Enigma: Então lembre-se: entender o binário é o primeiro passo para pensar como as máquinas!");
-
+        
+        System.out.println("");
+        System.out.println("");
+        
+        System.out.println("---------------------------------PRÓXIMO EXERCÍCIO---------------------------------");
+        System.out.println("");
+        
+        int nDecimal = 6;
+        String respostaBinaria = conversaoParaBinario(nDecimal);
+        
+        System.out.println("Lembra do exercício em que você transformou um número decimal em binário? Vamos ver um outro exemplo para entender melhor como isso funciona:");
+        System.out.println("Professor Enigma: " + nDecimal + " em binário é " + respostaBinaria + ".");
+        System.out.println("Professor Enigma: Vamos entender:");
+        System.out.println("Cada posição representa um valor. Se o número for maior ou igual ao valor, colocamos 1; se for menor, colocamos 0.");
+        System.out.println("Depois, somamos os valores que têm 1 para conferir o total.");
+        System.out.println("Usamos a tabela abaixo para converter números decimais em binário:\n");
+        System.out.println("Tabela: 128 64 32 16 8 4 2 1");
+        System.out.println("Binário: 0   0  0  0 0 1 1 0\n");
+        System.out.println("Soma: 4 + 2 + 0 = 6 --> Resultado: 00000110\n");
+        System.out.println("Professor Enigma: Praticando, isso fica fácil!");
+        
+        System.out.println("");
+        System.out.println("");
     }
     
     
@@ -255,13 +288,14 @@ public class CodigoPerdido {
         System.out.println("Binário:  0   0   0   0   0  0  0 1 1 0 1");
         System.out.println("Soma: 8 + 4 + 1 = 13 --> Resultado: 00000001101\n\n");
 
-        System.out.println("Professor Enigma: Agora sim, estamos prontos para os verdadeiros desafios.");
-
+        System.out.println("Professor Enigma: Agora sim, estamos prontos para os verdadeiros desafios.");        
         
-        desafioAdivinheOBinario();
+        int n = nDecimal();
+        String binario = conversaoParaBinario(n);
+        desafioAdivinheOBinario(n, binario);
         
         desafioOPoderDoDois();
-
+        
         
         System.out.println("\nProfessor Enigma: MAGNÍFICO, " + nome + "! Você realmente pegou o jeito do binário.");
         System.out.println("Professor Enigma: Com esse conhecimento, você está pronto para o próximo passo.");
@@ -343,7 +377,7 @@ public class CodigoPerdido {
         
         mostrarFim(); // Chama a função que exibe a mensagem de parabéns
         
-        System.out.println("Pressione ENTER para voltar ao Menu!");
+        System.out.println("Pressione ENTER para ir ao Modo Estudo!");
         input.nextLine(); // Aguarda o jogador pressionar ENTER
         System.out.println("Indo para o MODO ESTUDO");
     }
@@ -357,10 +391,10 @@ public class CodigoPerdido {
             opcao = menu();
             switch (opcao){
              case 1:
-                    String nome = inicio();
+                    /*String nome = inicio();
                     cofreoctal(nome);
                     chavehexadecimal(nome);
-                    bossfinal(nome);
+                    bossfinal(nome);*/
                     modoEstudo();
                 break;
              case 2:
