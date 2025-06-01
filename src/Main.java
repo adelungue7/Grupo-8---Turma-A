@@ -1,9 +1,7 @@
-package codigoperdido;
-
 import java.util.Random;
 import java.util.Scanner;
 
-public class CodigoPerdido {
+public class Main {
 
     public static int menu(){
          Scanner input = new Scanner(System.in);
@@ -35,18 +33,35 @@ public class CodigoPerdido {
         System.out.println("Pressione ENTER para voltar ao Menu!");
         retorno();
     }
+    
     public static void retorno(){
         Scanner input = new Scanner(System.in);
         input.nextLine();
     }
     
-    public static void desafioAdivinheOBinario() {
-        Scanner input = new Scanner(System.in);
+    
+    public static int nDecimal() {
         Random random = new Random();
+        
         // Gera um número decimal entre 1 e 15 (para manter o binário curto)
-        int numeroDecimal = random.nextInt(15) + 1; 
+        int n = random.nextInt(15) + 1;
+        
+        return n;
+    }
+    
+    public static String conversaoParaBinario(int numeroDecimal) {
+        
+        String binario = Integer.toBinaryString(numeroDecimal);
+        
+        return binario;
+    }
+    
+       
+    public static void desafioAdivinheOBinario(int numeroDecimal, String respostaBinariaCorreta) {
+        Scanner input = new Scanner(System.in);
+        
         // Converte para binário para saber a resposta correta (usado para validação)
-        String respostaBinariaCorreta = Integer.toBinaryString(numeroDecimal); 
+        //respostaBinariaCorreta = Integer.toBinaryString(numeroDecimal);
 
         System.out.println("\nProfessor Enigma: Prepare-se! Qual é o número " + numeroDecimal + " em binário?");
         System.out.println("Dica: Use a tabela 8 4 2 1 para te ajudar!");
@@ -65,10 +80,10 @@ public class CodigoPerdido {
         if (respostaJogador.equals(respostaBinariaCorreta)) {
             System.out.println("Professor Enigma: MUITO BEM! " + numeroDecimal + " em binário é " + respostaBinariaCorreta + ". Você acertou!");
         } else {
-            System.out.println("Professor Enigma: Ops, quase! A resposta correta para " + numeroDecimal + " em binário é " + respostaBinariaCorreta + ".");
-            System.out.println("Professor Enigma: Não desanime, a prática leva à perfeição!");
+            System.out.println("Professor Enigma: Ops, quase! Não desanime, a prática leva à perfeição!");
         }
     }
+    
     
     public static void desafioOPoderDoDois() {
         Scanner input = new Scanner(System.in);
@@ -97,14 +112,17 @@ public class CodigoPerdido {
         }
     }
 
+    
     public static void bossFinalModoFacil() {
         // Implementação do modo fácil do Boss Final
     }
 
+    
     public static void bossFinalModoDificil() {
         // Implementação do modo difícil do Boss Final
     }
 
+    
     public static void mostrarFim() {
         System.out.println(" ______ _____ __  __ ");
         System.out.println("|  ____|_   _|  \\/  |");
@@ -115,7 +133,103 @@ public class CodigoPerdido {
         System.out.println();
         System.out.println();
     }
+    
+    
+    public static void modoEstudo() {
+        System.out.println("");
+        System.out.println(" __  __  ____  _____   ____    ______  _____ _______ _    _ _____   ____");
+        System.out.println("|  \\/  |/ __ \\|  __ \\ / __ \\  |  ____|/ ____|__   __| |  | |  __ \\ / __ \\"); 
+        System.out.println("| \\  / | |  | | |  | | |  | | | |__  | (___    | |  | |  | | |  | | |  | |");
+        System.out.println("| |\\/| | |  | | |  | | |  | | |  __|  \\___ \\   | |  | |  | | |  | | |  | |");
+        System.out.println("| |  | | |__| | |__| | |__| | | |____ ____) |  | |  | |__| | |__| | |__| |");
+        System.out.println("|_|  |_|\\____/|_____/ \\____/  |______|_____/   |_|   \\____/|_____/ \\____/ ");
+        System.out.println("");
+        System.out.println("");
+                                                                           
+        
+        //System.out.println("Aqui o professor Enigma vai te mostrar as explicações de todas as questões que você respondeu");
+        System.out.println("AQUI O PROFESSOR ENIGMA VAI TE MOSTRAR AS EXPLICAÇÕES DE TODAS AS QUESTOÕES QUE VOCÊ RESPONDEU");
+        System.out.println();
+        
+        System.out.println("---------------------------------PRIMEIRO EXERCÍCIO---------------------------------");
+        
+        System.out.println("O que é o sistema binário?");
+        System.out.println("Professor Enigma: Vamos revisar juntos!");
+        System.out.println("O sistema binário é a linguagem dos computadores. Ele usa apenas dois símbolos: 0 e 1.");
+        System.out.println("Por que isso? Porque máquinas funcionam com dois estados simples: ligado (1) e desligado (0).");
+        System.out.println("Tudo - números, letras, imagens, sons - é convertido em combinações de 0s e 1s para que o computador entenda.");
+        System.out.println();
+        System.out.println("Por exemplo:");
+        System.out.println("O número 2, no sistema binário, é 10.");
+        System.out.println("O número 3, é 11.");
+        System.out.println();
+        System.out.println("Professor Enigma: Então lembre-se: entender o binário é o primeiro passo para pensar como as máquinas!");
+        
+        System.out.println("");
+        System.out.println("");
+        
+        System.out.println("---------------------------------PRÓXIMO EXERCÍCIO---------------------------------");
+        System.out.println("");
+        
+        int nDecimal = 6;
+        String respostaBinaria = conversaoParaBinario(nDecimal);
+        
+        System.out.println("Lembra do exercício em que você transformou um número decimal em binário? Vamos ver um outro exemplo para entender melhor como isso funciona:");
+        System.out.println("Professor Enigma: " + nDecimal + " em binário é " + respostaBinaria + ".");
+        System.out.println("Professor Enigma: Vamos entender:");
+        System.out.println("Cada posição representa um valor. Se o número for maior ou igual ao valor, colocamos 1; se for menor, colocamos 0.");
+        System.out.println("Depois, somamos os valores que têm 1 para conferir o total.");
+        System.out.println("Usamos a tabela abaixo para converter números decimais em binário:\n");
+        System.out.println("Tabela: 128 64 32 16 8 4 2 1");
+        System.out.println("Binário: 0   0  0  0 0 1 1 0\n");
+        System.out.println("Soma: 4 + 2 + 0 = 6 --> Resultado: 00000110\n");
+        System.out.println("Professor Enigma: Praticando, isso fica fácil!");
+        
+        System.out.println("");
+        System.out.println("");
+        System.out.println("---------------------------------PRÓXIMO EXERCÍCIO---------------------------------");
 
+        System.out.println("O que são potências de 2?");
+        System.out.println("São números que crescem dobrando:");
+        System.out.println("1, 2, 4, 8, 16, 32, 64...\n");
+
+        System.out.println("Como saber se um número é potência de 2?");
+        System.out.println("1. Está na lista? Então sim.");
+        System.out.println("2. Dá para dividir por 2 até chegar em 1 sem sobrar nada? Então sim.");
+        System.out.println("   Ex: 32 → 16 → 8 → 4 → 2 → 1 → Sim");
+        System.out.println("   Ex: 30 → 15 → 7.5 → Não");
+        System.out.println("3. Você chegou nele dobrando 1? Então sim.\n");
+
+        System.out.println("Exemplo:");
+        System.out.println("Imagine caixas com moedas mágicas.");
+        System.out.println("Só funcionam se tiverem potência de 2 moedas.");
+        System.out.println("Você precisa dizer sim ou não para cada número que aparecer.");
+        System.out.println("");
+        System.out.println("");
+            }
+    
+    
+    public static String perguntaInicio() {
+        Scanner input = new Scanner(System.in);
+        
+        String resposta = "";
+        
+        System.out.println("Professor Enigma: Vamos começar com a primeira pergunta: O que é o sistema binário?\n\n");
+        System.out.println("Escolha do jogador: \nA. São gêneros!\nB. São sistemas que usam apenas dois dígitos: 1 e 1,0.\nC. São sistemas que usam apenas dois dígitos: 0 e 1.");
+
+        while(true) {
+            System.out.println("Digite sua resposta (A/B/C): ");
+            resposta = input.next().toUpperCase();
+            
+            if (resposta.equals("A") || resposta.equals("B") || resposta.equals("C")) { //garante que o jogador digite apenas esses tres caracteres
+                break;
+            } else {
+                System.out.println("Resposta inválida. Por favor, digite A, B ou C");
+            }
+        }
+        return resposta;
+    }
+    
     
     public static String inicio(){
         Scanner input = new Scanner(System.in);
@@ -146,29 +260,25 @@ public class CodigoPerdido {
         nome + ": Binário? Octal? Hexa-o-quê?\n\n" +
         "Professor Enigma: Vou te ensinar tudo.\n\n");
 
-        System.out.println("Professor Enigma: Vamos começar com a primeira pergunta: O que é o sistema binário?\n\n");
-        System.out.println("Escolha do jogador: \nA. São gêneros!\nB. São sistemas que usam apenas dois dígitos: 1 e 1,0.\nC. São sistemas que usam apenas dois dígitos: 0 e 1.");
-        System.out.println("Digite sua resposta (A/B/C): ");
-        String resposta = input.next().toUpperCase();
+        
+        String resposta = perguntaInicio(); // Função para chamar a pergunta
 
+        
         if (resposta.equals("C")) {
-        System.out.println("Professor Enigma: Inacreditável, você sabe disso! Meus parabéns, você sobreviveria aqui!");
-        }   
-        else if (resposta.equals("B")) {
-        System.out.println("Professor Enigma: QUASE! O sistema binário usa apenas 0 e 1, mas vejo que tem alguma noção.");
-        }   
-        else {
-        System.out.println("Professor Enigma: Deus tenha piedade de nós. A resposta correta é: 0 e 1.");
+            System.out.println("Professor Enigma: Inacreditável, você sabe disso! Meus parabéns, você sobreviveria aqui!");
+            System.out.println("\nProfessor Enigma: Muito bem, agora preste atenção!");
+        } else {
+            System.out.println("Resposta incorreta."); //depois é explicado no modo estudo
         }
 
-        System.out.println("\nProfessor Enigma: Muito bem, agora preste atenção!");
+        
         System.out.println("Professor Enigma: O sistema binário é composto por dígitos chamados bits. Cada bit pode ser 0 ou 1.");
         System.out.println("Professor Enigma: Mas o segredo está nas posições! Cada posição vale o dobro da anterior: 1, 2, 4, 8, 16, 32...");
         System.out.println("Professor Enigma: Isso porque cada posição representa uma **potência de 2**.");
         System.out.println("\nProfessor Enigma: Veja este exemplo com o número 5:");
 
         System.out.println("Decimal: 5 --> Como chegamos a isso?");
-        System.out.println("Resposta: 5 = 4 + 1 --> Ou seja: 2² + 2⁰");
+        System.out.println("Resposta: 5 = 4 + 1 --> Ou seja: 2² + 2?");
         System.out.println("Tabela:    8  4  2  1");
         System.out.println("Binário:   0  1  0  1 --> Resultado final: 0101\n");
 
@@ -177,32 +287,35 @@ public class CodigoPerdido {
         System.out.println("\nProfessor Enigma: Crie uma tabela dos números em base 2 (de 1 até 1024). Vamos testar!\n\n");
 
         for (int i = 0; i < 11; i++) {
-        System.out.print(nome + ", digite um número da tabela binária: ");
-        numero = input.nextInt();
+            System.out.print(nome + ", digite um número da tabela binária: ");
+            numero = input.nextInt();
 
-        if (numero == 1 || numero == 2 || numero == 4 || numero == 8 ||
-        numero == 16 || numero == 32 || numero == 64 ||
-        numero == 128 || numero == 256 || numero == 512 || numero == 1024) {
-        System.out.println("Número válido! Boa!");
-            } 
-        else {
-        System.out.println("Número inválido! Tente novamente.");
-        i--; // Repete a tentativa
+            if (numero == 1 || numero == 2 || numero == 4 || numero == 8 ||
+                numero == 16 || numero == 32 || numero == 64 ||
+                numero == 128 || numero == 256 || numero == 512 || numero == 1024) {
+                System.out.println("Número válido! Boa!");
+            } else {
+                System.out.println("Número inválido! Tente novamente.");
+                i--; // Repete a tentativa
             }
         }
 
-        System.out.println("\nProfessor Enigma: Excelente. Esses são os **poderes do 2** — com eles, você pode representar qualquer número!");
+        System.out.println("\nProfessor Enigma: Excelente. Esses são os **poderes do 2** ? com eles, você pode representar qualquer número!");
         System.out.println("Professor Enigma: Veja, quanto é 13 em binário?\n");
 
         System.out.println("Tabela: 1024 512 256 128 64 32 16 8 4 2 1");
-        System.out.println("Binário:  0     0   0   0   0  0   0  1 1 0 1");
+        System.out.println("Binário:  0   0   0   0   0  0  0 1 1 0 1");
         System.out.println("Soma: 8 + 4 + 1 = 13 --> Resultado: 00000001101\n\n");
 
-        System.out.println("Professor Enigma: Agora sim, estamos prontos para os verdadeiros desafios.");
-
-        desafioAdivinheOBinario();
+        System.out.println("Professor Enigma: Agora sim, estamos prontos para os verdadeiros desafios.");        
+        
+        int n = nDecimal();
+        String binario = conversaoParaBinario(n);
+        desafioAdivinheOBinario(n, binario);
+        
         desafioOPoderDoDois();
-
+        
+        
         System.out.println("\nProfessor Enigma: MAGNÍFICO, " + nome + "! Você realmente pegou o jeito do binário.");
         System.out.println("Professor Enigma: Com esse conhecimento, você está pronto para o próximo passo.");
 
@@ -215,36 +328,39 @@ public class CodigoPerdido {
         System.out.println("Digite 'SIM' para continuar ou 'NÃO' para esperar:");
         // Lê a resposta do jogador
         String resposta2 = input.next().toUpperCase();
+        
         if (resposta2.equals("SIM")) {
-        System.out.println("\nProfessor Enigma: Excelente! A aventura continua! Rumo ao Cofre Octal!");
-        // Chame aqui a função que inicia o desafio Octal
-        // Ex: iniciarDesafioOctal(input, nome);
-            } 
-        else {
-        System.out.println("\nProfessor Enigma: Entendo. Precisamos ter certeza de que você está preparado.");
-        System.out.println("Professor Enigma: Volte quando estiver pronto para enfrentar o Cofre Octal.");
-        // espera o jogador pressionar ENTER para continuar o jogo
-        System.out.println("Pressione ENTER para continuar!");
-        input.nextLine(); // Aguarda o jogador pressionar ENTER
-            }
+            System.out.println("\nProfessor Enigma: Excelente! A aventura continua! Rumo ao Cofre Octal!");
+            // Chame aqui a função que inicia o desafio Octal
+            // Ex: iniciarDesafioOctal(input, nome);
+        } else {
+            System.out.println("\nProfessor Enigma: Entendo. Precisamos ter certeza de que você está preparado.");
+            System.out.println("Professor Enigma: Volte quando estiver pronto para enfrentar o Cofre Octal.");
+            // espera o jogador pressionar ENTER para continuar o jogo
+            System.out.println("Pressione ENTER para continuar!");
+            input.nextLine(); // Aguarda o jogador pressionar ENTER
+        }
 
         return nome;
     }
+    
     
     public static void cofreoctal(String nome){
         
     }
     
+    
     public static void chavehexadecimal(String nome){
         
     }
+    
     
     public static void bossfinal(String nome){
         Scanner input = new Scanner(System.in);
 
         System.out.println("\nProfessor Enigma: Parabéns, " + nome + "! Você chegou ao final da jornada!\n\n"
         + "Professor Enigma: Mas cuidado, o Boss Final está à sua espera!\n\nEle é o mestre das bases numéricas e não vai facilitar!\n\n"
-        + "Prepare-se para o desafio final, onde suas habilidades em binário, octal e hexadecimal serão testadas ao máximo!\n\nBoa sorte, \" + nome + \"! Você vai precisar!\n");
+        + "Prepare-se para o desafio final, onde suas habilidades em binário, octal e hexadecimal serão testadas ao máximo!\n\nBoa sorte, " + nome + "!" + " Você vai precisar!\n");
         
         System.out.println("Pressione ENTER para enfrentar o Boss Final!");
         input.nextLine(); // Aguarda o jogador pressionar ENTER
@@ -256,7 +372,9 @@ public class CodigoPerdido {
         + "Boss Final: Vamos começar!\n\n");
         
         System.out.println("Você quer enfrentar o boss no modo fácil ou difícil? (Digite '0' para fácil ou '1' para difícil)");
+        
         int dificuldade = input.nextInt();
+        
         while (dificuldade < 0 || dificuldade > 1) {
             System.out.println("Opção inválida! Digite '0' para fácil ou '1' para difícil.");
             dificuldade = input.nextInt();
@@ -278,35 +396,35 @@ public class CodigoPerdido {
         
         mostrarFim(); // Chama a função que exibe a mensagem de parabéns
         
-        System.out.println("Pressione ENTER para voltar ao Menu!");
+        System.out.println("Pressione ENTER para ir ao Modo Estudo!");
         input.nextLine(); // Aguarda o jogador pressionar ENTER
-        System.out.println("Voltando ao Menu...");
-        menu(); // Chama a função que exibe o menu principal
+        System.out.println("Indo para o MODO ESTUDO");
     }
+    
+    
     
     public static void main(String[] args) {
         
         int opcao;
-     do{
-        opcao = menu();
-        switch (opcao){
-         case 1:
-            String nome = inicio();
-             cofreoctal(nome);
-             chavehexadecimal(nome);
-             bossfinal(nome);
-            break;
-         case 2:
-             instrucoes();
-             break;
-         case 3:
-             creditos();
-             break;
-         case 4:
-             System.out.println("Até LOGO! Saindo...");
-        }
-     }while(opcao != 4);
+        do{
+            opcao = menu();
+            switch (opcao){
+             case 1:
+                    String nome = inicio();
+                    cofreoctal(nome);
+                    chavehexadecimal(nome);
+                    bossfinal(nome);
+                    modoEstudo();
+                break;
+             case 2:
+                    instrucoes();
+                 break;
+             case 3:
+                    creditos();
+                 break;
+             case 4:
+                    System.out.println("Até LOGO! Saindo...");
+            }
+        }while(opcao != 4);
     }
 }
-    
-
