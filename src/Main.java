@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -29,7 +31,7 @@ public class Main {
 
     public static void creditos()//função que mostra os créditos
     {
-        System.out.println("Jogo desenvolvido por:\nErick Yuji Conceição\nGustavo Golçalves Viana\nJoão Victor Reis Alves\nNathan Ferraz Liberatti\nRafael Adelungue Da Silva");
+        System.out.println("Jogo desenvolvido por:\nErick Yuji Conceição\nGustavo Gonçalves Viana\nJoão Vitor Reis Alves\nNathan Ferraz Liberatti\nRafael Adelungue Da Silva");
         System.out.println("Pressione ENTER para voltar ao Menu!");
         retorno();
     }
@@ -139,6 +141,55 @@ public class Main {
                 System.out.println("\nProfessor Enigma: Errado! Tente novamente, pense na conversão de binário para octal");
             }
         }
+    }
+
+
+    public static void desafioHexaTrilha(){
+        Scanner entrada = new Scanner (System.in);
+
+        System.out.println("???: Vocês descem por uma trilha que brilha a cada passo e ele deve estar alinhado com a equivalência do decimal para hexa: \n");
+        System.out.println("Professor Enigma: Para passar na trilha está muito suave, só dizer qual o valor hexadecimal em decimal!\n ");
+        System.out.println("Dica: de 10 a 15 hexadecimal, são letras de A a F.\n");
+
+        int acertos = 0;
+
+        System.out.println("DEC: 15 => HEX: ");
+        String ra = entrada.nextLine().toUpperCase();
+        if (ra.equals("F")) acertos++;
+
+        System.out.println("DEC: 12 => HEX: ");
+        String rb = entrada.nextLine().toUpperCase();
+        if (rb.equals("C")) acertos++;
+
+        System.out.println("DEC: 10 => HEX: ");
+        String rc = entrada.nextLine().toUpperCase();
+        if (rc.equals("A")) acertos++;
+
+        System.out.println("DEC: 14 => HEX: ");
+        String rd = entrada.nextLine().toUpperCase();
+        if (rd.equals("E")) acertos++;
+
+        System.out.println("DEC: 11 => HEX: ");
+        String re = entrada.nextLine().toUpperCase();
+        if (re.equals("B")) acertos++;
+
+        System.out.println("DEC: 13 => HEX: ");
+        String rf = entrada.nextLine().toUpperCase();
+        if (rf.equals("D")) acertos++;
+
+        System.out.println("\nVocê acertou " + acertos + " de 6!\n");
+
+        if (acertos == 6){
+
+            System.out.println("Professor Enigma: Que bom! Você dominou os valores HEXA. A trilha está cada vez mais se abrindo.\n");
+
+        }
+        else {
+            System.out.println("Professsor Enigma: Não foi dessa vez mas terá outras chances ainda.\n");
+        }
+
+
+
     }
 
 
@@ -436,7 +487,7 @@ public class Main {
         System.out.println("???: BOOOOOOOM!\n");
         System.out.println("Professor Enigma: QUE BARULHO FOI ESSE?\n");
         System.out.println("???: Um portal começa se abrir com simbolos estranhos, letras e números. A realidade já está se reconfigurando\n");
-        System.out.println(nome + " Professor, o que está acontecendo? Não tô entendendo mais nada\n");
+        System.out.println(nome + ": Professor, o que está acontecendo? Não tô entendendo mais nada\n");
         System.out.println("Professor Enigma: Será que tá vindo a próxima fase?\n");
         System.out.println("???: Estão sendo sugados para outra dimensão!\n");
         System.out.println("Professor Enigma: OLha só! A parte HEXADECIMAL já está por vir. Por lá tem CHAVES que te levam próximo da realidade!\n\n");
@@ -456,8 +507,23 @@ public class Main {
 
 
     public static void chavehexadecimal(String nome){
+        System.out.println("\n\n*****CHAVE HEXADECIMAL*****\n\n");
+        System.out.println(nome + ": Não tenho escolha, quero encarar isso tudo de frente!\n");
+        System.out.println("???: Você sente como se tivesse sendo desmontado em dados... e usado de outro jeito.");
+        System.out.println("???: Quando abre os olhos está em um vale com silêncio e escuridão. " +
+                "Rochas flutuando como se o tempo tivesse parado");
+        System.out.println("???: De longe já se vê uma torre formada por códigos piscantes: Com letras de A a F e números embaralhados.\n");
+        System.out.println("Professor Enigma: Seja bem vindo á Margem dos Digitos. Aqui,tudo é mantido pelo sistema hexadecimal.\n");
+        System.out.println(nome + ": Porque tem letras voando?\n");
+        System.out.println("Professor Enigma: Porque aqui, os números não terminam no 9. Depois dele, vem o A, depois o B, até o F. ");
+        System.out.println("Professor Enigma: A = 10, B = 11 até F = 15, sendo uma base de 16.");
+        System.out.println("Professor Enigma: Na base decimal, contamos: 0, 1, 2.. até 9. Aqui é: 0, 1, 2... 9, A, B, C, D, E, F.\n");
 
+        System.out.println("???: Um tremor começa a sacudir o vale. Do céu, uma estrela de código cai bem na frente, abrindo uma cratera de luz.");
+        System.out.println("Professor Enigma: Um caminho foi revelado, vamos seguir e ver o que é.\n");
+        desafioHexaTrilha();
     }
+
 
 
     public static void bossfinal(String nome){
