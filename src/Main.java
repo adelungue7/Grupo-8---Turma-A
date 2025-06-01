@@ -187,6 +187,45 @@ public class Main {
         else {
             System.out.println("Professsor Enigma: Não foi dessa vez mas terá outras chances ainda.\n");
         }
+    }
+
+    public static void desafioHexafixa() {
+        Scanner entrada = new Scanner(System.in);
+        Random aleatorio = new Random();
+
+        System.out.println("???: Veja bem... Eu vou te mostrar um número em OCTAL.\n" +
+                "???: Seu trabalho é me dizer qual é esse número em HEXADECIMAL.\n" +
+                "???: Só quem domina os códigos secretos pode atravessar!\n ");
+
+        System.out.println("Professor Enigma: Calma, jovem aventureiro! Vou te ensinar como resolver isso.\n");
+        System.out.println("Professor Enigma: Primeiro, pegue o número octal e transforme em decimal.");
+        System.out.println("Professor Enigma: Exemplo: 561 em octal = 5×64 + 6×8 + 1×1 = 320 + 48 + 1 = 369.");
+        System.out.println("Professor Enigma: E de decimal você transforma em hexadecimal como esse exemplo: " +
+                "369 ÷ 16 = 23 → resto 1\n" +
+                "23 ÷ 16 = 1 → resto 7\n" +
+                "1 ÷ 16 = 0 → resto 1\n ");
+
+        System.out.println("Professor Enigma: Isso é apenas uma dica minha pra você pequeno gafanhoto, agora espere que o desafio vai vir: \n");
+        System.out.println("*****5*****\n*****4*****\n*****3*****\n*****2*****\n*****1*****\n\n");
+
+        while (true){
+            int numeroDecimal = aleatorio.nextInt(64);
+            String numeroOctal = Integer.toOctalString(numeroDecimal);
+            String numeroHexa = Integer.toHexString(numeroDecimal).toUpperCase();
+
+
+            System.out.println("Número em OCTAL: " + numeroOctal);
+            System.out.print("\nDigite sua resposta (hexadecimal): ");
+            String resposta = entrada.nextLine().trim().toUpperCase();
+            if (resposta.equals(numeroHexa)) {
+                System.out.println("Porta: Você acertou! A porta se abriu com a chave Hexadecimal\n");
+                break;
+            } else {
+                System.out.println("Porta: Errado! A resposta correta era: " + numeroHexa);
+            }
+        }
+
+
 
 
 
@@ -507,21 +546,80 @@ public class Main {
 
 
     public static void chavehexadecimal(String nome){
+        Scanner entrada = new Scanner (System.in);
         System.out.println("\n\n*****CHAVE HEXADECIMAL*****\n\n");
         System.out.println(nome + ": Não tenho escolha, quero encarar isso tudo de frente!\n");
+
         System.out.println("???: Você sente como se tivesse sendo desmontado em dados... e usado de outro jeito.");
         System.out.println("???: Quando abre os olhos está em um vale com silêncio e escuridão. " +
                 "Rochas flutuando como se o tempo tivesse parado");
         System.out.println("???: De longe já se vê uma torre formada por códigos piscantes: Com letras de A a F e números embaralhados.\n");
+
         System.out.println("Professor Enigma: Seja bem vindo á Margem dos Digitos. Aqui,tudo é mantido pelo sistema hexadecimal.\n");
         System.out.println(nome + ": Porque tem letras voando?\n");
+
         System.out.println("Professor Enigma: Porque aqui, os números não terminam no 9. Depois dele, vem o A, depois o B, até o F. ");
         System.out.println("Professor Enigma: A = 10, B = 11 até F = 15, sendo uma base de 16.");
         System.out.println("Professor Enigma: Na base decimal, contamos: 0, 1, 2.. até 9. Aqui é: 0, 1, 2... 9, A, B, C, D, E, F.\n");
 
-        System.out.println("???: Um tremor começa a sacudir o vale. Do céu, uma estrela de código cai bem na frente, abrindo uma cratera de luz.");
+        System.out.println("???: Um tremor começa a sacudir o vale. Do céu, uma estrela de código cai bem na frente, abrindo uma cratera de luz.\n");
         System.out.println("Professor Enigma: Um caminho foi revelado, vamos seguir e ver o que é.\n");
+
         desafioHexaTrilha();
+
+        System.out.println("\n???: Ao final da trilha tem uma porta com '2F' escrito nela.");
+        System.out.println("\nProfessor Enigma: Olha.... O número 2F em Hexadecimal, sabe o que significa?");
+        System.out.println("Professor Enigma: Em decimal, 2F significa (2x16)+15 = 47.\n");
+        System.out.println(nome + ": Então quer dizer que isso é pra esconder números né?.\n");
+        System.out.println("Professor Enigma: Ou pra compactá-los. Hexadecimal é bastante usado na computação pra representar bastante valores com poucos digitos.");
+
+        System.out.println("Professor Enigma: Vamos praticar um pouco. Converta agora o número hexadecimal '3C' para decimal. Mostre-me que está pronto!\n");
+        System.out.println("???: Você para por um instante. '3C'... você se lembra da explicação do Professor: cada dígito vale algo diferente...");
+        System.out.println("???: C é 12, então (3 * 16) + 12...");
+
+        System.out.println("\nQual é o valor decimal de '3C'?");
+        System.out.println("A) 48");
+        System.out.println("B) 60");
+        System.out.println("C) 45");
+        System.out.println("D) 72");
+        System.out.print("\nSua resposta (A, B, C ou D): ");
+        String resp = entrada.nextLine().toUpperCase();
+
+        if (resp.equals("B")){
+            System.out.println("Excelente garoto, isso porque era um teste surpresa.\n");
+        }
+        else {
+            System.out.println("Você errou mas não tem problema, o que importa é o desafio final!\n");
+        }
+
+
+        System.out.println("???: De repente, a terra treme levemente. O solo à frente se parte, revelando uma enorme porta metálica cravada em uma rocha negra.");
+        System.out.println("???: A porta emite um som metálico e diz em voz baixa.");
+        System.out.println("???: 'APENAS QUEM DOMINA MINHA LINGUAGEM PODE SEGUIR'.\n");
+        System.out.println("Professor Enigma: Cada resposta correta nos aproximou desse momento. A porta reconheceu seu avanço.\n");
+        System.out.println("???: A porta diz: 'Quem conseguir o desafio que eu propor, vai ter a chave hexadecimal para me desbloquear!\n.");
+
+        desafioHexafixa();
+
+        System.out.println(nome + ": Não acredito que consegui desbloquear essa parte\n");
+        System.out.println("Professor Enigma: Realmente, seus conhecimentos estão cada vez melhores.");
+        System.out.println("Professor Enigma: Está destrancada, você não vai abrir a porta não?");
+        System.out.println("Professor Enigma: Vai ver o que tem atrás dela? (SIM/NÃO)");
+
+        System.out.println("\nJogador: ");
+        String resposta4 = entrada.next().toUpperCase();
+        if (resposta4.equals("SIM")) {
+            System.out.println("\nProfessor Enigma: Excelente! Vamos descobrir juntos!");
+        }
+        else {
+            System.out.println("\nProfessor Enigma: Entendo. Precisamos ter certeza de que você está preparado.");
+            System.out.println("Professor Enigma: Você pode retornar ao menu para rever seus conhecimentos ou descansar.");
+            menu();
+        }
+
+
+
+
     }
 
 
