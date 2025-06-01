@@ -234,11 +234,205 @@ public class Main {
 
     public static void bossFinalModoFacil() {
         // Implementação do modo fácil do Boss Final
+        Scanner input = new Scanner(System.in);
+
+        // --- Desafio 1: Matriz Binária ---
+        System.out.println("\nBoss Final: Primeiro desafio! Veja esta matriz binária 3x3:");
+        int[][] matriz = {
+            {1, 0, 1},
+            {0, 1, 0},
+            {1, 1, 0}
+        };
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("Boss Final: Qual é o valor decimal da soma dos elementos da diagonal principal?");
+        int respostaCerta1 = matriz[0][0] + matriz[1][1] + matriz[2][2]; // 1+1+0=2
+        int tentativas = 0;
+        boolean acertou = false;
+        while (tentativas < 2) {
+            System.out.print("Sua resposta: ");
+            int resposta = input.nextInt();
+            if (resposta == respostaCerta1) {
+                System.out.println("Boss Final: Muito bem! Você acertou o primeiro desafio!");
+                acertou = true;
+                break;
+            } else {
+                tentativas++;
+                if (tentativas < 2) {
+                    System.out.println("Boss Final: Errou! Tente novamente.");
+                }
+            }
+        }
+        if (!acertou) {
+            System.out.println("Boss Final: Você falhou duas vezes. Não foi capaz de derrotar o Boss Final!");
+            System.out.println("Voltando ao menu...");
+            return;
+        }
+
+        // --- Desafio 2: Lista de Hexadecimais ---
+        System.out.println("\nBoss Final: Segundo desafio! Veja esta lista de números hexadecimais:");
+        String[] hexList = {"A", "F", "1C", "B", "10"};
+        System.out.print("Lista: ");
+        for (String h : hexList) System.out.print(h + " ");
+        System.out.println("\nBoss Final: Qual é o valor decimal do maior número da lista?");
+        // Encontrar o maior valor decimal
+        int maior = 0;
+        for (String h : hexList) {
+            int val = Integer.parseInt(h, 16);
+            if (val > maior) maior = val;
+        }
+        tentativas = 0;
+        acertou = false;
+        while (tentativas < 2) {
+            System.out.print("Sua resposta: ");
+            int resposta = input.nextInt();
+            if (resposta == maior) {
+                System.out.println("Boss Final: Impressionante! Você acertou o segundo desafio!");
+                acertou = true;
+                break;
+            } else {
+                tentativas++;
+                if (tentativas < 2) {
+                    System.out.println("Boss Final: Errou! Tente novamente.");
+                }
+            }
+        }
+        if (!acertou) {
+            System.out.println("Boss Final: Você falhou duas vezes. Não foi capaz de derrotar o Boss Final!");
+            System.out.println("Voltando ao menu...");
+            return;
+        }
+
+        // --- Desafio 3: Lógica simples (Octal) ---
+        System.out.println("\nBoss Final: Último desafio! Converta o número octal 57 para decimal.");
+        int respostaCerta3 = Integer.parseInt("57", 8); // 47
+        tentativas = 0;
+        acertou = false;
+        while (tentativas < 2) {
+            System.out.print("Sua resposta: ");
+            int resposta = input.nextInt();
+            if (resposta == respostaCerta3) {
+                System.out.println("Boss Final: Você venceu todos os desafios do modo fácil! Parabéns!");
+                acertou = true;
+                break;
+            } else {
+                tentativas++;
+                if (tentativas < 2) {
+                    System.out.println("Boss Final: Errou! Tente novamente.");
+                }
+            }
+        }
+        if (!acertou) {
+            System.out.println("Boss Final: Você falhou duas vezes. Não foi capaz de derrotar o Boss Final!");
+            System.out.println("Voltando ao menu...");
+            return;
+        }
     }
 
 
     public static void bossFinalModoDificil() {
         // Implementação do modo difícil do Boss Final
+        Scanner input = new Scanner(System.in);
+
+        // --- Desafio 1: Matriz Binária ---
+        System.out.println("\nBoss Final: Primeiro desafio! Veja esta matriz binária 3x3:");
+        int[][] matriz = {
+            {1, 0, 1},
+            {0, 1, 0},
+            {1, 1, 0}
+        };
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("Boss Final: Qual é o valor decimal da soma dos elementos da diagonal principal?");
+        int respostaCerta1 = matriz[0][0] + matriz[1][1] + matriz[2][2]; // 1+1+0=2
+        int tentativas = 0;
+        boolean acertou = false;
+        while (tentativas < 2) {
+            System.out.print("Sua resposta: ");
+            int resposta = input.nextInt();
+            if (resposta == respostaCerta1) {
+                System.out.println("Boss Final: Muito bem! Você acertou o primeiro desafio!");
+                acertou = true;
+                break;
+            } else {
+                tentativas++;
+                if (tentativas < 2) {
+                    System.out.println("Boss Final: Errou! Tente novamente.");
+                }
+            }
+        }
+        if (!acertou) {
+            System.out.println("Boss Final: Você falhou duas vezes. Não foi capaz de derrotar o Boss Final!");
+            System.out.println("Voltando ao menu...");
+            return;
+        }
+
+        // --- Desafio 2: Lista de Hexadecimais ---
+        System.out.println("\nBoss Final: Segundo desafio! Veja esta lista de números hexadecimais:");
+        String[] hexList = {"A", "F", "1C", "B", "10"};
+        System.out.print("Lista: ");
+        for (String h : hexList) System.out.print(h + " ");
+        System.out.println("\nBoss Final: Qual é o valor decimal do maior número da lista?");
+        // Encontrar o maior valor decimal
+        int maior = 0;
+        for (String h : hexList) {
+            int val = Integer.parseInt(h, 16);
+            if (val > maior) maior = val;
+        }
+        tentativas = 0;
+        acertou = false;
+        while (tentativas < 2) {
+            System.out.print("Sua resposta: ");
+            int resposta = input.nextInt();
+            if (resposta == maior) {
+                System.out.println("Boss Final: Impressionante! Você acertou o segundo desafio!");
+                acertou = true;
+                break;
+            } else {
+                tentativas++;
+                if (tentativas < 2) {
+                    System.out.println("Boss Final: Errou! Tente novamente.");
+                }
+            }
+        }
+        if (!acertou) {
+            System.out.println("Boss Final: Você falhou duas vezes. Não foi capaz de derrotar o Boss Final!");
+            System.out.println("Voltando ao menu...");
+            return;
+        }
+
+        // --- Desafio 3: Lógica simples (Octal) ---
+        System.out.println("\nBoss Final: Último desafio! Converta o número octal 57 para decimal.");
+        int respostaCerta3 = Integer.parseInt("57", 8); // 47
+        tentativas = 0;
+        acertou = false;
+        while (tentativas < 2) {
+            System.out.print("Sua resposta: ");
+            int resposta = input.nextInt();
+            if (resposta == respostaCerta3) {
+                System.out.println("Boss Final: Você venceu todos os desafios do modo fácil! Parabéns!");
+                acertou = true;
+                break;
+            } else {
+                tentativas++;
+                if (tentativas < 2) {
+                    System.out.println("Boss Final: Errou! Tente novamente.");
+                }
+            }
+        }
+        if (!acertou) {
+            System.out.println("Boss Final: Você falhou duas vezes. Não foi capaz de derrotar o Boss Final!");
+            System.out.println("Voltando ao menu...");
+            return;
+        }
     }
 
 
