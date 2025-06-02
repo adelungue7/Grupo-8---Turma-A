@@ -520,9 +520,7 @@ public class Main {
         System.out.println("");
         System.out.println("");
 
-
-        //System.out.println("Aqui o professor Enigma vai te mostrar as explicações de todas as questões que você respondeu");
-        System.out.println("AQUI O PROFESSOR ENIGMA VAI TE MOSTRAR AS EXPLICAÇÕES DE TODAS AS QUESTOÕES QUE VOCÊ RESPONDEU");
+        System.out.println("AQUI O PROFESSOR ENIGMA VAI TE MOSTRAR AS EXPLICAÇÕES DE TODAS AS QUESTÕES QUE VOCÊ RESPONDEU");
         System.out.println();
 
         System.out.println("---------------------------------PRIMEIRO EXERCÍCIO---------------------------------");
@@ -565,6 +563,7 @@ public class Main {
         pausaLonga();
 
         System.out.println("---------------------------------PRÓXIMO EXERCÍCIO---------------------------------");
+        System.out.println("");
 
         System.out.println("O que são potências de 2?");
         System.out.println("São números que crescem dobrando:");
@@ -581,6 +580,120 @@ public class Main {
         System.out.println("Imagine caixas com moedas mágicas.");
         System.out.println("Só funcionam se tiverem potência de 2 moedas.");
         System.out.println("Você precisa dizer sim ou não para cada número que aparecer.");
+        System.out.println("");
+        System.out.println("");
+        pausaLonga();
+
+        System.out.println("---------------------------------PRÓXIMO EXERCÍCIO---------------------------------");
+        System.out.println("");
+
+        System.out.println("\"345 na base 8... quanto isso vale na base 10?\"\n");
+
+        System.out.println("Para resolver, você precisa usar a fórmula abaixo:");
+        System.out.println("Cada dígito é (8 elevado à sua posição, da direita para a esquerda).");
+        System.out.println("345₈ = 3×8² + 4×8¹ + 5×8⁰");
+        System.out.println("     = 3×64 + 4×8 + 5×1");
+        System.out.println("      = 192 + 32 + 5 = 229\n");
+        pausaLonga();
+
+        System.out.println("---------------------------------PRÓXIMO EXERCÍCIO---------------------------------");
+        System.out.println("");
+
+        System.out.println("Como resolver um exercício de conversão de binário para octal:");
+        System.out.println("Separe o número binário em grupos de 3 dígitos, começando da direita para a esquerda.\n");
+        System.out.println("Se faltar dígitos no início, complete com zeros à esquerda para formar os grupos.\n");
+        System.out.println("Converta cada grupo de 3 dígitos binários para decimal.\n");
+        System.out.println("Isso porque cada grupo representa exatamente um dígito no sistema octal.\n");
+        System.out.println("Junte os dígitos decimais obtidos na mesma ordem para formar o número octal.\n");
+
+        System.out.println("Exemplo prático:");
+        System.out.println("Converter o binário 1101011 para octal:\n");
+
+        System.out.println("Separe em grupos de 3 (da direita pra esquerda):");
+        System.out.println("1 101 011 > complete com zeros: 001 101 011\n");
+
+        System.out.println("Converta cada grupo para decimal:\n");
+        System.out.println("001 = 1");
+        System.out.println("101 = 5");
+        System.out.println("011 = 3\n");
+
+        System.out.println("Junte os dígitos:");
+        System.out.println("Resultado octal: 153\n");
+
+        System.out.println("Conclusão:");
+        System.out.println("Para converter de binário para octal:");
+        System.out.println("Agrupe em trios > Converta para decimal > Junte os valores");
+        System.out.println("");
+        System.out.println("");
+        pausaLonga();
+
+        System.out.println("---------------------------------PRÓXIMO EXERCÍCIO---------------------------------");
+        System.out.println("");
+
+        System.out.println("COMO RESOLVER O DESAFIO DA CHAVE HEXADECIMAL\n");
+        System.out.println("O sistema hexadecimal é um sistema de base 16.");
+        System.out.println("Ele usa os números de 0 a 9 e depois as letras de A a F:");
+        System.out.println("A = 10, B = 11, C = 12, D = 13, E = 14, F = 15\n");
+
+        System.out.println("CONVERSÕES IMPORTANTES:\n");
+
+        System.out.println("1. Decimal → Hexadecimal:");
+        System.out.println("- Divida o número por 16 e anote o resto.");
+        System.out.println("- Continue dividindo o quociente até ele ser 0.");
+        System.out.println("- Depois, leia os restos de baixo para cima.");
+        System.out.println("Exemplo: 26 ÷ 16 = 1 (resto 10 → A), 1 ÷ 16 = 0 (resto 1)");
+        System.out.println("Resultado: 1A\n");
+
+        System.out.println("2. Hexadecimal → Decimal:");
+        System.out.println("- Multiplique cada dígito pela potência de 16 conforme a posição.");
+        System.out.println("Exemplo: 1A = (1 × 16¹) + (10 × 16⁰) = 16 + 10 = 26\n");
+
+        System.out.println("Dica: Sempre lembre que:");
+        System.out.println("A = 10, B = 11, C = 12, D = 13, E = 14, F = 15\n");
+        System.out.println("");
+        System.out.println("");
+        pausaLonga();
+
+        System.out.println("---------------------------------PRÓXIMO EXERCÍCIO---------------------------------");
+        System.out.println("");
+        System.out.println("DESAFIO HEXAFIXA\n");
+        System.out.println("Neste desafio, você precisa aplicar o que aprendeu sobre o sistema hexadecimal.");
+        System.out.println("Pode ser necessário converter números entre decimal e hexadecimal ou identificar valores equivalentes.");
+        System.out.println("Lembre-se que no sistema hexadecimal:");
+        System.out.println("- A = 10, B = 11, C = 12, D = 13, E = 14, F = 15");
+        System.out.println("- A base é 16, então cada posição representa uma potência de 16\n");
+
+        System.out.println("EXEMPLO DE CONVERSÃO:\n");
+        System.out.println("Hexadecimal para Decimal:");
+        System.out.println("- Exemplo: 2F = (2 × 16¹) + (15 × 16⁰) = 32 + 15 = 47\n");
+
+        System.out.println("Decimal para Hexadecimal:");
+        System.out.println("- Exemplo: 47 ÷ 16 = 2 (resto 15 → F), 2 ÷ 16 = 0 (resto 2)");
+        System.out.println("- Resultado: 2F\n");
+
+        System.out.println("Dica:");
+        System.out.println("Mantenha a tabela de conversão em mente e pense em cada posição como uma potência de 16.");
+        System.out.println("Assim, você decifra os códigos e avança na jornada!\n");
+        System.out.println("");
+        System.out.println("");
+        pausaLonga();
+
+        System.out.println("---------------------------------PRÓXIMO EXERCÍCIO---------------------------------");
+        System.out.println("");
+        System.out.println("DESAFIO FINAL: O BOSS DAS BASES NUMÉRICAS\n");
+        System.out.println("Chegou a hora do desafio supremo! Aqui você vai precisar dominar três sistemas numéricos fundamentais:");
+        System.out.println("- Binário (base 2): usa apenas os dígitos 0 e 1");
+        System.out.println("- Octal (base 8): usa os dígitos de 0 a 7");
+        System.out.println("- Hexadecimal (base 16): usa os dígitos de 0 a 9 e as letras A a F (A=10 até F=15)\n");
+
+        System.out.println(" EXEMPLOS RÁPIDOS:\n");
+        System.out.println("Decimal 10 > Binário: 1010");
+        System.out.println("Decimal 64 > Octal: 100");
+        System.out.println("Decimal 255 > Hexadecimal: FF");
+        System.out.println("Hexadecimal 1A > Decimal: (1 × 16) + 10 = 26\n");
+
+        System.out.println(" Dica Final:");
+        System.out.println("Pense com calma. Use a lógica. Lembre-se da base de cada sistema.");
         System.out.println("");
         System.out.println("");
     }
@@ -797,7 +910,7 @@ public class Main {
         pausa();
         System.out.println("???: BOOOOOOOM! \n");
         pausa();
-        System.out.println("Professor Enigma: O corredor está fechando e o tempo está quebrando!\n");
+        System.out.println("Professor Enigma: O corredor está fechando e o tempo está quebrando!");
         pausa();
         System.out.println("???: Linhas de códigos se soltam das paredes, o chão começa a se desfazer.\n");
         pausa();
@@ -897,7 +1010,6 @@ public class Main {
         pausa();
 
         System.out.println("Professor Enigma: Porque aqui, os números não terminam no 9. Depois dele, vem o A, depois o B, até o F. ");
-        pausa();
         System.out.println("Professor Enigma: A = 10, B = 11 até F = 15, sendo uma base de 16.");
         System.out.println("Professor Enigma: Na base decimal, contamos: 0, 1, 2.. até 9. Aqui é: 0, 1, 2... 9, A, B, C, D, E, F.\n");
         pausa();
@@ -954,7 +1066,6 @@ public class Main {
         System.out.println("Professor Enigma: Cada resposta correta nos aproximou desse momento. A porta reconheceu seu avanço.\n");
         pausa();
         System.out.println("???: A porta diz: 'Quem conseguir o desafio que eu propor, vai ter a chave hexadecimal para me desbloquear!\n.");
-        pausa();
 
         desafioHexafixa();
 
