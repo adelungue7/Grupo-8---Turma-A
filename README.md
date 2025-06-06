@@ -87,3 +87,5 @@ O principal objetivo de "O CÓDIGO PERDIDO" é educacional. Ele utiliza a estrut
 O jogo é estruturado para introduzir esses conceitos gradualmente, começando pelo binário, passando pelo octal e depois pelo hexadecimal, culminando em um desafio final que testa o conhecimento consolidado. O "Modo Estudo" ao final serve como uma excelente ferramenta de revisão.
 
 Em resumo, "O CÓDIGO PERDIDO" é uma aventura textual que transforma o aprendizado sobre sistemas numéricos em uma missão para salvar a realidade, guiada pelo Professor Enigma e cheia de desafios lógicos e matemáticos.
+
+LINK DO TRELLO: https://trello.com/b/Yxlr5AIX/kanban-trello
